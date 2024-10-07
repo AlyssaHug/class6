@@ -12,15 +12,38 @@ if they are over 70, then ALSO warn them about their "life"
 */
 
 //determine a proper parameter variable name
-function CheckDrinkingAge(paramAge){
 
-  console.log("Write your code here!");
+/*Ask how old user age to see if legal drinking age*/
+//age under 13 = paramAge < 13
+  //age 13-18 = paramAge > 13 && paramAge < 19
+  //age 19-50 = paramAge >= 19 && paramAge <= 50
+  //age 51-70 = paramAge > 50 && paramAge <= 70
+  // age over 70 = paramAge > 70
+function CheckDrinkingAge(paramAge){
+  if(paramAge < 13) {
+    console.log('Please leave.');
+  } else if(paramAge >= 13 && paramAge < 19){
+    console.log('Close, but not old enough. Grow quicker or get out.');
+  } else if(paramAge >= 19 && paramAge <= 50){
+    console.log('Have fun. Drink away.');
+  } else if(paramAge > 50 && paramAge < 70){
+    console.log('Careful about your health.')
+  } else if(paramAge >= 70){
+    console.log("Don't risk it dude")
+  }
 }
 
 //determine a proper question to ask and the proper variable name for user input
-readline.question('How old are you?', _variableName => {
+function StartApp(){
+readline.question('Are you old enough to drink?', age => {
+  CheckDrinkingAge(Number(age));
 
+  if (age !== "exit"){
+    StartApp();
+  }else {
+    readline.close();
+  }
   //call your function here
-  
-  readline.close();
 });
+}
+StartApp();
