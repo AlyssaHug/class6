@@ -35,7 +35,7 @@ function CheckDrinkingAge(paramAge){
 
 //determine a proper question to ask and the proper variable name for user input
 function StartApp(){
-readline.question('Are you old enough to drink?', age => {
+readline.question('Are you old enough to get in the bar? Please put your age in.', age => {
   CheckDrinkingAge(Number(age));
 
   if (age !== "exit"){
@@ -47,3 +47,5 @@ readline.question('Are you old enough to drink?', age => {
 });
 }
 StartApp();
+
+//Reviewed by Thea. Helped check code to make sure no mistakes were made.
