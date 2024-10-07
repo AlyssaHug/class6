@@ -12,13 +12,13 @@ if they are over 70, then ALSO warn them about their "life"
 */
 
 //determine a proper parameter variable name
-function CheckDrinkingAge(paramVariable){
+function CheckDrinkingAge(paramAge){
 
   console.log("Write your code here!");
 }
 
 //determine a proper question to ask and the proper variable name for user input
-readline.question('the question ', _variableName => {
+readline.question('How old are you?', _variableName => {
 
   //call your function here
   
