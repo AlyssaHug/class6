@@ -38,7 +38,7 @@ This means you can close the game with both "quit" and losing
 function GuessingGame(paramGuess) {
   let paramAnswer="13"
   if(paramGuess === 13){
-    console.log('You got it right! You win!!!') 
+    console.log('You got it right! You win!!!')
   }else if(paramGuess >= 1 && paramGuess > paramAnswer && paramGuess <= 20){
     console.log('Too big!')
   }else if(paramGuess <= 20 && paramGuess < paramAnswer && paramGuess >= 1){
