@@ -30,28 +30,41 @@ This means you can close the game with both "quit" and losing
 */
 
 //determine a proper parameter variable name
-function GuessingGame(paramVariableAnswer, paramVariableGuess) {
-  console.log("Write your code here!");
+
+//ask to guess number between 1 and 20 = answer will be 13
+//Bigger than answer = paramGuess >= 1 && paramGuess > paramAnswer && paramGuess <= 20
+//smaller than nanswer = paramGuess <= 20 && paramGuess < paramAnswer && paramGuess >= 1
+//got it right = paramGuess === 13
+function GuessingGame(paramGuess) {
+  let paramAnswer="13"
+  if(paramGuess === 13){
+    console.log('You got it right! You win!!!') 
+  }else if(paramGuess >= 1 && paramGuess > paramAnswer && paramGuess <= 20){
+    console.log('Too big!')
+  }else if(paramGuess <= 20 && paramGuess < paramAnswer && paramGuess >= 1){
+    console.log('Too Small!')
+  }else if(paramGuess > 20){
+    console.log('Not even in range! Try again.')
+  }
 }
 
 //determine a proper question to ask and the proper variable name for the answer
-readline.question("the question for answer", (_variableNameAnswer) => {
+//readline.question("Guess a number between 1 and 20.", (guess) => {
 
   //make an infinite recall for guessing question
   function StartGame() {
 
     //determine a proper question to ask and the proper variable name for the user to guess
-    readline.question("the question for guessing ", (_variableNameGuess) => {
-      
+    readline.question("Guess a number between 1 and 20.", guess => {
+      GuessingGame(Number(guess));
       //call your function here
 
-      if (_variableNameGuess === "quit") {
-        readline.close();
-      } else {
+      if (guess !== "quit") {
         StartGame();
+      } else {
+        readline.close();
       }
     });
   }
-
-  StartGame();
-});
+StartGame();
+// easy to read :D very nice, code works very nice unlike mine. took inspiration off her code. - Sophia Wan
